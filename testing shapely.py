@@ -2,6 +2,37 @@ from shapely.geometry import Point, Polygon
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# takes the number of the polygon (starting with polygon 1) returns coords as list needed
+# arguments - takes number of poly
+# returns - list of coords needed for shapely 
+def coordinates(n):
+    infile = open("polygoncoords.txt")
+
+    all_polygons = []
+
+    for line in infile:
+        words = line.replace(" ", "")
+        words = words.strip()
+        numbers = words.split("],[")
+        numbers[0] = numbers[0].replace("[[",'')
+        numbers[-1] = numbers[-1].replace("]]", '')
+
+        floated_list = []
+
+        for coords in numbers:
+            coordinate_pair = []
+            number = coords.split(",")
+            for i in number:
+                i = i.replace("'", "")
+                i = float(i)
+                coordinate_pair.append(i)
+            floated_list.append(coordinate_pair)
+
+        all_polygons.append(floated_list)
+    n = int(n)
+    return all_polygons[n-1]            
+        
 # writes a new file of all beachballs in a polygon
 # arguments - the polygon coordinates as a list, new name to write the beachballs to
 # returns the centre of the polygon, needed for Kostrov summation 
@@ -10,7 +41,7 @@ def is_inside(coords, file_name):
     # opening focal mechanism data
     infile = open("C:/Users/nadia/Documents/University/geophys project/convertedlong.txt")
 
-    newfile = open("C:/Users/nadia/Documents/University/geophys project/%s" % file_name, "w")
+    newfile = open("%s" % file_name, "w")
     loopcounter = 0
     pointcounter = 0
 
@@ -51,10 +82,10 @@ def Kostrov_summation(polygonname, filename, centre):
     # Kostrov summation code, takes mrr, mtt, mpp, mrt, mrp and mtp
 
     # open the focal file 
-    infile = open("C:/Users/nadia/Documents/University/geophys project/%s" % polygonname)
+    infile = open("%s" % polygonname)
 
     # create a new file to write out mrr, mtt, mpp etc. values
-    newfile = open("C:/Users/nadia/Documents/University/geophys project/%s" % filename, "w")
+    newfile = open("%s" % filename, "w")
 
     # setting empty lists
     mrr_list = []
@@ -153,7 +184,7 @@ def Kostrov_summation(polygonname, filename, centre):
 # works out the seismic consistency of the area
 # arguments - data from Kostrov with m0 added from linux, m0 beachball file
 # returns seismic consistency value
-def seismic_consistency(m0polygonfile, beachballfile):
+def seismic_consistency(m0polygonfile, m0beachballfile):
     # finding scalar moment of sum tensor
     infile = open(m0polygonfile, "r")
     
@@ -162,7 +193,7 @@ def seismic_consistency(m0polygonfile, beachballfile):
         s_moment_average = float(words[-1])
 
     # finding sum of scalar moments in area
-    secondfile = open(beachballfile, "r")
+    secondfile = open(m0beachballfile, "r")
     scalar_moment_list = []
 
     for line in secondfile:
@@ -198,17 +229,23 @@ def frequ_mag_graph(mwbeachballs):
     while magn <= 8:
         count = sum(mw >= magn for mw in magnitudes)
         frequencies.append(count)
-        magn += 1
+        magn += 0.5
+
+    try:
+        while True:
+            frequencies.remove(0)
+    
+    except ValueError:
+        pass
 
     for freq in frequencies:
-        if freq > 0:
-            freq = np.log10(freq)
-            logged_freq.append(freq)
+        freq = np.log10(freq)
+        logged_freq.append(freq)
 
     magn = 4.5
     for log in logged_freq:
         list_mags.append(magn)
-        magn += 1
+        magn += 0.5
 
 
     plt.yscale("log")
@@ -285,15 +322,44 @@ def depth_distribution(beachballname):
     plt.grid(True)
     plt.show()
     
+# for polygon number n, does Kostrov summation
+def polygonnumber(n):
+    # POLYGON n
+    polygonn = coordinates(n)
+    changing_polygon = is_inside(polygonn, "polygon%s.txt" % (n))
+    Kostrov_summation("polygon%s.txt" % (n), "Kostrov%s.txt" % (n), changing_polygon)
 
-# POLYGON 1
-# coordinates of polygon
-polygon1 = [[175, -30], [185, -30], [185, -43], [175, -43]]
-# which points are inside my polygon
-changing_polygon = is_inside(polygon1, "polygon1.txt")
-# Kostrov summation on the points inside the polygon
-# Kostrov_summation("polygon1.txt", "Kostrov1.txt", changing_polygon)
-#print(seismic_consistency("m0Kostrov1.txt", "m0beachballsnz.txt" ))
-a, b, x, y, p1d = frequ_mag_graph("testfmgraphdata.txt")
-error = sqr_error(p1d, x, np.log10(y))
-depth_distribution("beachballsnz.txt")
+# part 2, need m0 and mw data for these files
+def polygonnumberpart2(n):
+    """ Have to use remote desktop to add_m0 to Kostrov1 data
+        The line is: add_m0 Kostrov1.txt > m0Kostrov1.txt
+        
+    Then for frequ mag graphs need mw data, same process
+    but for poly files"""
+
+    print(seismic_consistency("m0Kostrov%s.txt" % (n), "polygon%s.txt" % (n)))
+
+    a, b, x, y, p1d = frequ_mag_graph("mwpolygon%s.txt" % (n))
+
+    # currently not returned or stored just code in case
+    error = sqr_error(p1d, x, np.log10(y))
+    
+    depth_distribution("polygon%s.txt" % (n))
+
+
+# PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
+total_polys = 9
+n = 1
+while n <= total_polys:
+    polygonnumber("%s" % n)
+    n += 1
+
+# PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
+n = 1
+while n <= total_polys:
+    polygonnumberpart2("%s" % n)
+    n += 1
+
+
+
+
