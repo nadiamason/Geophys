@@ -220,7 +220,7 @@ def frequ_mag_graph(mwbeachballs):
         words = line.split()
         mw = float(words[-1])
         magnitudes.append(mw)
-    
+    print("Total number is %f" % total_number)
     magn = 4.5
     list_mags = []
     frequencies = []
@@ -266,7 +266,7 @@ def frequ_mag_graph(mwbeachballs):
     # Set the y axis label of the current axis.
     plt.ylabel('Number of Earthquakes')
     # Set a title of the current axes.
-    plt.title('Frequency-magnitude plot')
+    plt.title('Frequency-magnitude plot - polygon %s' % (n))
     # show a legend on the plot
     plt.legend()
     # Display a figure.
@@ -336,15 +336,15 @@ def polygonnumberpart2(n):
         
     Then for frequ mag graphs need mw data, same process
     but for poly files"""
-
+    print("%s" % (n))
     print(seismic_consistency("m0Kostrov%s.txt" % (n), "polygon%s.txt" % (n)))
 
     a, b, x, y, p1d = frequ_mag_graph("mwpolygon%s.txt" % (n))
 
     # currently not returned or stored just code in case
-    error = sqr_error(p1d, x, np.log10(y))
+    #error = sqr_error(p1d, x, np.log10(y))
     
-    depth_distribution("polygon%s.txt" % (n))
+    #depth_distribution("polygon%s.txt" % (n))
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
