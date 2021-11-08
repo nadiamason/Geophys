@@ -9,7 +9,7 @@ channels:
 
 dependencies:
   - pip
-  - python=3.8  # Python 3.9 also works, but we are being a bit conservative here.
+  - python  # Python 3.9 also works, but we are being a bit conservative here.
   - pip:
     - jupyter
     - numpy
