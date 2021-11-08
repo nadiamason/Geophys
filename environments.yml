@@ -2,7 +2,7 @@
 # are not considered dependencies. They are pip-installed
 # separately on CI.
 
-name: Geophysics Project
+name: Geophysics-Project
 
 channels:
   - defaults
