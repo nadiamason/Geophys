@@ -288,7 +288,7 @@ def depth_distribution(beachballname):
 
 # POLYGON 1
 # coordinates of polygon
-polygon1 = [(175, -30), (185, -30), (185, -43), (175, -43)]
+polygon1 = [[175, -30], [185, -30], [185, -43], [175, -43]]
 # which points are inside my polygon
 changing_polygon = is_inside(polygon1, "polygon1.txt")
 # Kostrov summation on the points inside the polygon
