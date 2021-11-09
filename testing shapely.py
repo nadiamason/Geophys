@@ -36,14 +36,11 @@ def coordinates(n):
 # writes a new file of all beachballs in a polygon
 # arguments - the polygon coordinates as a list, new name to write the beachballs to
 # returns the centre of the polygon, needed for Kostrov summation 
-def is_inside(coords, file_name):
-
+def shallow_is_inside(coords, file_name):
     # opening focal mechanism data
     infile = open("C:/Users/nadia/Documents/University/geophys project/convertedlong.txt")
 
     newfile = open("%s" % file_name, "w")
-    loopcounter = 0
-    pointcounter = 0
 
     # using Shapely to make Polygon
     poly = Polygon(coords)
@@ -51,11 +48,15 @@ def is_inside(coords, file_name):
     # middle of Polygon
     centre_point = np.array(poly.centroid.coords)
 
+    # starts reading the data to work out if each focal is in polygon
     for line in infile:
 
-        words = line.split()
-
-        loopcounter += 1 
+        words = line.split() 
+        
+        # finding depth - if deeper than 70km we don't want it
+        depth = float(words[2])
+        if depth > 70:
+            continue
 
         # taking longitude and latitude
         long = float(words[0])
@@ -69,13 +70,13 @@ def is_inside(coords, file_name):
 
         # if it is inside the polygon, write it in a new file
         if contains == True:
-            pointcounter += 1
             newfile.write(line)
 
     # returns centre_point because need it for Kostrov summation      
     return centre_point
 
 # Kostrov summation for polygon
+# ONLY WANT SHALLOW (<70KM) EARTHQUAKES
 # arguments - file of poly. data to sum, new file name to write data to, centre point of polygon
 # returns list of mrr, mtt, mpp etc. for the summation
 def Kostrov_summation(polygonname, filename, centre):
@@ -322,15 +323,15 @@ def depth_distribution(beachballname):
     plt.grid(True)
     plt.show()
     
-# for polygon number n, does Kostrov summation
-def polygonnumber(n):
+# for polygon number n, does Kostrov summation - ONLY FOR SHALLOW EARTHQUAKES
+def Kostrovsum(n):
     # POLYGON n
     polygonn = coordinates(n)
-    changing_polygon = is_inside(polygonn, "polygon%s.txt" % (n))
+    changing_polygon = shallow_is_inside(polygonn, "polygon%s.txt" % (n))
     Kostrov_summation("polygon%s.txt" % (n), "Kostrov%s.txt" % (n), changing_polygon)
 
 # part 2, need m0 and mw data for these files
-def polygonnumberpart2(n):
+def graphs(n):
     """ Have to use remote desktop to add_m0 to Kostrov1 data
         The line is: add_m0 Kostrov1.txt > m0Kostrov1.txt
         
@@ -351,13 +352,13 @@ def polygonnumberpart2(n):
 total_polys = 9
 n = 1
 while n <= total_polys:
-    polygonnumber("%s" % n)
+    Kostrovsum("%s" % n)
     n += 1
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 n = 1
 while n <= total_polys:
-    polygonnumberpart2("%s" % n)
+    graphs("%s" % n)
     n += 1
 
 
