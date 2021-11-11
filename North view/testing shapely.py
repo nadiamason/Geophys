@@ -1,6 +1,7 @@
 from shapely.geometry import Point, Polygon, polygon
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 
 
 # takes the number of the polygon (starting with polygon 1) returns coords as list needed
@@ -221,7 +222,7 @@ def seismic_consistency(m0polygonfile, m0beachballfile):
 # plots frequ-mag graph
 # arguments - mw beach ball data
 # shows the graph and returns the a, b values as [-b, a]
-def frequ_mag_graph(mwbeachballs):
+def frequ_mag_graph(mwbeachballs, sconsis):
     # opening focal mechanism data with mw on the end
     infile = open(mwbeachballs)
 
@@ -279,7 +280,7 @@ def frequ_mag_graph(mwbeachballs):
     # Set the y axis label of the current axis.
     plt.ylabel('Number of Earthquakes')
     # Set a title of the current axes.
-    plt.title('Frequency-magnitude plot - polygon %s' % (n))
+    plt.title('Frequency-magnitude plot - polygon %s.\nSeismic Consistency = %.4f' % (n, sconsis))
     # show a legend on the plot
     plt.legend()
     # Display a figure.
@@ -334,7 +335,10 @@ def depth_distribution(beachballname):
     plt.scatter(list_depths, depth_frequ, s = 2)
     plt.grid(True)
     plt.show()
-    
+
+# takes areaKostrov1, area Kostrov2 etc.... goes to areaKostrovs.txt
+# also does the same for polygons
+# returns the number of lines for each polygon file needed to uncondense    
 def condensingrepeats(area, total):
     newfileKostrov = open("%sKostrovs" % area, "w")
     newfilepolygons = open("%spolygons" % area, "w")
@@ -356,6 +360,9 @@ def condensingrepeats(area, total):
         counter += 1
     return linenumbers
 
+# takes Kostrovs to m0Kostrov1, m0Kostrov2 etc
+# also does the same for polygons, mwpolygon1 etc.
+# returns nothing
 def uncondensingrepeats(area, total, linenumbers):
     Kosinfile = open("m0%sKostrovs.txt" % area)
     Kostrovdata = []
@@ -383,9 +390,6 @@ def uncondensingrepeats(area, total, linenumbers):
 
         counter += 1
 
-
-
-
 # for polygon number n, does Kostrov summation - ONLY FOR SHALLOW EARTHQUAKES
 def Kostrovsum(n, area):
     # POLYGON n
@@ -396,19 +400,18 @@ def Kostrovsum(n, area):
 # part 2, need m0 and mw data for these files
 def graphs(n, area):
     """ Have to use remote desktop to add_m0 to Kostrov1 data
-        The line is: add_m0 Kostrov1.txt > m0Kostrov1.txt
+        The line is: add_m0 areaKostrovs.txt > m0areaKostrovs.txt
         
     Then for frequ mag graphs need mw data, same process
     but for poly files"""
-    print("%s" % (n))
-    print(seismic_consistency("m0%sKostrov%s.txt" % (area, n), "%spolygon%s.txt" % (area, n)))
+    seismic_consis = seismic_consistency("m0%sKostrov%s.txt" % (area, n), "%spolygon%s.txt" % (area, n))
 
-    a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n))
+    a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
 
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
     
-    #depth_distribution("polygon%s.txt" % (n))
+    depth_distribution("%spolygon%s.txt" % (area, n))
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
@@ -421,10 +424,10 @@ while n <= total_polys:
     Kostrovsum("%s" % n, area)
     n += 1
 linenumbers = condensingrepeats(area, total_polys)
-uncondensingrepeats(area, total_polys, linenumbers)
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
-#n = 1
-#while n <= total_polys:
-    #graphs("%s" % n, area)
-    #n += 1
+uncondensingrepeats(area, total_polys, linenumbers)
+n = 1
+while n <= total_polys:
+    graphs("%s" % n, area)
+    n += 1
