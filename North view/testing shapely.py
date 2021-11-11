@@ -284,7 +284,7 @@ def frequ_mag_graph(mwbeachballs, sconsis):
     # show a legend on the plot
     plt.legend()
     # Display a figure.
-    plt.show()
+    #plt.show()
 
     return a, b, list_mags, frequencies, p1d
 
@@ -296,7 +296,7 @@ def sqr_error(p, xi, yi):
     diff2 = (p(xi)-yi)**2
     return diff2.sum()
 
-# plots the frequ of depths, in 5 km intervals 
+# plots the frequ of depths, in 10 km intervals 
 # arguments - takes name of beachballfile
 # returns nothing, shows the graph 
 def depth_distribution(beachballname):
@@ -317,24 +317,38 @@ def depth_distribution(beachballname):
             continue
     
     depth_tracker = 0
-    higher_depth_tracker = 5
+    higher_depth_tracker = 10
     depth_frequ = []
     while depth_tracker <= max(depths):
         count = sum(dep >= depth_tracker and dep < higher_depth_tracker for dep in depths)
         depth_frequ.append(count)
 
-        depth_tracker += 5
-        higher_depth_tracker += 5
+        depth_tracker += 10
+        higher_depth_tracker += 10
 
     list_depths = []
     depth = 0
     for dep in depth_frequ:
         list_depths.append(depth)
-        depth += 5
+        depth += 10
 
-    plt.scatter(list_depths, depth_frequ, s = 2)
-    plt.grid(True)
+    return list_depths, depth_frequ
+
+
+
+def plotting_depths():
+    #ssinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/ssbeachballsnz.txt")
+    #thrustinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/thrustbeachballsnz.txt")
+    #normalinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/normalbeachballsnz.txt")
+
+    fig, axs = plt.subplots(2, 2, sharex=True, sharey=True)
+    axs[0, 0].plot(np.array(list_depths), np.array(depth_frequ))
+    axs[0, 1].plot(x, 0.3 * y, 'o')
+    axs[1, 0].plot(x, y, '+')
+    axs[1, 1].plot(x, y)
     plt.show()
+
+
 
 # takes areaKostrov1, area Kostrov2 etc.... goes to areaKostrovs.txt
 # also does the same for polygons
@@ -412,12 +426,12 @@ def graphs(n, area):
     but for poly files"""
     seismic_consis = seismic_consistency("m0%sKostrov%s.txt" % (area, n), "m0%spolygon%s.txt" % (area, n))
 
-    a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
+    #a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
 
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
     
-    #depth_distribution("%spolygon%s.txt" % (area, n))
+    x, y = depth_distribution("%spolygon%s.txt" % (area, n))
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
