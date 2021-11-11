@@ -351,7 +351,19 @@ def condensingrepeats(area, total):
 
         counter += 1
 
+def uncondensingrepeats(area, total):
+    Kosinfile = open("m0%sKostrovs.txt" % area)
+    Kostrovdata = []
+    counter = 1
+    while counter <= total:
+        newfileKostrov = open("m0%sKostrov%i.txt" % (area, counter), "w")
 
+        for line in Kosinfile:
+            Kostrovdata.append(line)
+        
+        newfileKostrov.write(Kostrovdata[counter-1])
+
+        counter += 1
 
 
 # for polygon number n, does Kostrov summation - ONLY FOR SHALLOW EARTHQUAKES
@@ -389,13 +401,10 @@ while n <= total_polys:
     Kostrovsum("%s" % n, area)
     n += 1
 condensingrepeats(area, total_polys)
+uncondensingrepeats(area, total_polys)
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 #n = 1
 #while n <= total_polys:
     #graphs("%s" % n, area)
     #n += 1
-
-
-
-
