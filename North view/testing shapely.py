@@ -339,7 +339,10 @@ def condensingrepeats(area, total):
     newfileKostrov = open("%sKostrovs" % area, "w")
     newfilepolygons = open("%spolygons" % area, "w")
     counter = 1
+    linecounter = 0
+    linenumbers = []
     while counter <= total:
+        linecounter = 0
         Kosinfile = open(str("%sKostrov%i.txt" % (area, counter)))
         polyinfile = open(str("%spolygon%i.txt" % (area, counter)))
         for line in Kosinfile:
@@ -348,22 +351,39 @@ def condensingrepeats(area, total):
         for line in polyinfile:
             newfilepolygons.write(line)
             newfilepolygons.write("\n")
-
+            linecounter += 1
+        linenumbers.append(linecounter)
         counter += 1
+    return linenumbers
 
-def uncondensingrepeats(area, total):
+def uncondensingrepeats(area, total, linenumbers):
     Kosinfile = open("m0%sKostrovs.txt" % area)
     Kostrovdata = []
+    polygoninfile = open("mw%spolygons.txt" % area)
+    polygondata = []
+
     counter = 1
+    for line in Kosinfile:
+        Kostrovdata.append(line)
+
+    for line in polygoninfile:
+        polygondata.append(line)
+
     while counter <= total:
         newfileKostrov = open("m0%sKostrov%i.txt" % (area, counter), "w")
+        newfilepolygon = open("mw%spolygon%i.txt" % (area, counter), "w")
+        line_counter = 1
 
-        for line in Kosinfile:
-            Kostrovdata.append(line)
+
+        while line_counter <= linenumbers[counter - 1]:
+            newfilepolygon.write(polygondata[line_counter - 1])
+            line_counter += 1
         
         newfileKostrov.write(Kostrovdata[counter-1])
 
         counter += 1
+
+
 
 
 # for polygon number n, does Kostrov summation - ONLY FOR SHALLOW EARTHQUAKES
@@ -400,8 +420,8 @@ n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
     n += 1
-condensingrepeats(area, total_polys)
-uncondensingrepeats(area, total_polys)
+linenumbers = condensingrepeats(area, total_polys)
+uncondensingrepeats(area, total_polys, linenumbers)
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 #n = 1
