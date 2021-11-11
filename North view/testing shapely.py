@@ -338,7 +338,7 @@ def depth_distribution(mwbeachballname):
 
     return np.array(list_depths), np.array(depth_frequ)
 
-def plotting_depths(area, n):
+def plotting_depths(area, n, seismicconsis):
     #ssinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/ssbeachballsnz.txt")
     #thrustinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/thrustbeachballsnz.txt")
     #normalinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/normalbeachballsnz.txt")
@@ -347,15 +347,35 @@ def plotting_depths(area, n):
     thrustx, thrusty = depth_distribution("thrust%spolygon%s.txt" % (area, n))
     normalx, normaly = depth_distribution("normal%spolygon%s.txt" % (area, n))
 
-    fig, axs = plt.subplots(2, 2, sharex=True, sharey=True)
-    ax1 = fig.add_subplot(00)
+    fig = plt.figure()
+    ax1 = fig.add_subplot(221)
+    ax2 = fig.add_subplot(222)
+    ax3 = fig.add_subplot(223)
+    ax4 = fig.add_subplot(224)
+
+    axes = [ax1, ax2, ax3, ax4]
+    type = ["All", "Strike-Slip", "Thrust", "Normal"]
+    index = 0
+    for axis in axes:
+        axis.set_xlim(0, 70)
+        axis.set_ylim(0, max(ally))
+        axis.title.set_text("%s Earthquakes" % (type[index]))
+        index += 1
+    
     ax1.plot(allx, ally)
-    axs[0, 1].plot(ssx, ssy)
-    axs[1, 0].plot(thrustx, thrusty)
-    axs[1, 1].plot(normalx, normaly)
+    ax2.plot(ssx, ssy)
+    ax3.plot(thrustx, thrusty)
+    ax4.plot(normalx, normaly)
+
+    plt.subplots_adjust(left=0.1,
+                    bottom=0.1, 
+                    right=0.9, 
+                    top=0.9, 
+                    wspace=0.4, 
+                    hspace=0.4)
+
+    fig.suptitle("Earthquake depth distribution by type. S.c = %.4f\n" % (seismicconsis))
     plt.show()
-
-
 
 # takes areaKostrov1, area Kostrov2 etc.... goes to areaKostrovs.txt
 # also does the same for polygons
@@ -438,7 +458,7 @@ def graphs(n, area):
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
     
-    plotting_depths(area, n)
+    plotting_depths(area, n, seismic_consis)
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
