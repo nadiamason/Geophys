@@ -39,11 +39,11 @@ def coordinates(n, areaname):
     n = int(n)
     hi = all_polygons[n-1]
     return all_polygons[n-1]   
-def shallow_is_inside(coords, file_name):
+def shallow_is_inside(coords, file_name, type):
     # opening focal mechanism data - want to open the converted version of beachballs
-    infile = open("C:/Users/nadia/Documents/University/geophys project/convertedlong.txt")
+    infile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/%smwm0convertedlong.txt" % type)
 
-    newfile = open("%s" % file_name, "w")
+    newfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/North view/%s" % file_name, "w")
 
     # using Shapely to make Polygon
     poly = Polygon(coords)
@@ -79,17 +79,16 @@ def shallow_is_inside(coords, file_name):
     return centre_point
 
 
-def making_dif_type_polys(total_polys, areaname, type):
-    coords = coordinates(total_polys, areaname)
-    shallow_is_inside(coords, "%spolygon%i" % (type, total_polys) )
+def making_dif_type_polys(n, areaname, type):
+    coords = coordinates(n, areaname)
+    shallow_is_inside(coords, "%s%spolygon%i.txt" % (type, areaname, n), type )
 
 
-
-ssinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/ssbeachballsnz.txt")
-thrustinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/thrustbeachballsnz.txt")
-normalinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/normalbeachballsnz.txt")
-
-total_polys = 1
-areaname = "northview"
-
-making_dif_type_polys(total_polys, areaname, "ss")
+area = "northview"
+total_polys = 12
+n = 1
+while n <= total_polys:
+    making_dif_type_polys(n, area, "ss")
+    making_dif_type_polys(n, area, "thrust")
+    making_dif_type_polys(n, area, "normal")
+    n += 1
