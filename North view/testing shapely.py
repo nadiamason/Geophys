@@ -68,8 +68,8 @@ def shallow_is_inside(coords, file_name):
         
         # finding depth - if deeper than 70km we don't want it
         depth = float(words[2])
-        #if depth > 70:
-            #continue
+        if depth > 70:
+            continue
 
         # taking longitude and latitude
         long = float(words[0])
@@ -198,25 +198,25 @@ def Kostrov_summation(polygonname, filename, centre):
 # works out the seismic consistency of the area
 # arguments - data from Kostrov with m0 added from linux, m0 beachball file
 # returns seismic consistency value
-def seismic_consistency(m0polygonfile, m0beachballfile):
+def seismic_consistency(m0Kostrovfile, m0polygonfile):
     # finding scalar moment of sum tensor
-    infile = open(m0polygonfile, "r")
+    infile = open(m0Kostrovfile, "r")
     
     for line in infile:
         words = line.split()
         s_moment_average = float(words[-1])
 
     # finding sum of scalar moments in area
-    secondfile = open(m0beachballfile, "r")
+    secondfile = open(m0polygonfile, "r")
     scalar_moment_list = []
 
     for line in secondfile:
         bits = line.split()
         scalar_moment_list.append(float(bits[-1]))
-        sum_scalar_moments = sum(scalar_moment_list)
+    sum_scalar_moments = sum(scalar_moment_list)
 
     seis_consistency = s_moment_average/sum_scalar_moments
-
+    print(seis_consistency)
     return seis_consistency
 
 # plots frequ-mag graph
@@ -340,8 +340,8 @@ def depth_distribution(beachballname):
 # also does the same for polygons
 # returns the number of lines for each polygon file needed to uncondense    
 def condensingrepeats(area, total):
-    newfileKostrov = open("%sKostrovs" % area, "w")
-    newfilepolygons = open("%spolygons" % area, "w")
+    newfileKostrov = open("%sKostrovs.txt" % area, "w")
+    newfilepolygons = open("%spolygons.txt" % area, "w")
     counter = 1
     linecounter = 0
     linenumbers = []
@@ -354,7 +354,6 @@ def condensingrepeats(area, total):
             newfileKostrov.write("\n")
         for line in polyinfile:
             newfilepolygons.write(line)
-            newfilepolygons.write("\n")
             linecounter += 1
         linenumbers.append(linecounter)
         counter += 1
@@ -366,24 +365,31 @@ def condensingrepeats(area, total):
 def uncondensingrepeats(area, total, linenumbers):
     Kosinfile = open("m0%sKostrovs.txt" % area)
     Kostrovdata = []
-    polygoninfile = open("mw%spolygons.txt" % area)
-    polygondata = []
+    polygonmwinfile = open("mw%spolygons.txt" % area)
+    polygonm0infile = open("m0%spolygons.txt" % area)
+    polygonmwdata = []
+    polygonm0data = []
 
     counter = 1
     for line in Kosinfile:
         Kostrovdata.append(line)
 
-    for line in polygoninfile:
-        polygondata.append(line)
+    for line in polygonmwinfile:
+        polygonmwdata.append(line)
+
+    for line in polygonm0infile:
+        polygonm0data.append(line)
 
     while counter <= total:
         newfileKostrov = open("m0%sKostrov%i.txt" % (area, counter), "w")
-        newfilepolygon = open("mw%spolygon%i.txt" % (area, counter), "w")
+        newfilemwpolygon = open("mw%spolygon%i.txt" % (area, counter), "w")
+        newfilem0polygon = open("m0%spolygon%i.txt" % (area, counter), "w")
         line_counter = 1
 
 
         while line_counter <= linenumbers[counter - 1]:
-            newfilepolygon.write(polygondata[line_counter - 1])
+            newfilemwpolygon.write(polygonmwdata[line_counter - 1])
+            newfilem0polygon.write(polygonm0data[line_counter - 1])
             line_counter += 1
         
         newfileKostrov.write(Kostrovdata[counter-1])
@@ -404,21 +410,21 @@ def graphs(n, area):
         
     Then for frequ mag graphs need mw data, same process
     but for poly files"""
-    seismic_consis = seismic_consistency("m0%sKostrov%s.txt" % (area, n), "%spolygon%s.txt" % (area, n))
+    seismic_consis = seismic_consistency("m0%sKostrov%s.txt" % (area, n), "m0%spolygon%s.txt" % (area, n))
 
     a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
 
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
     
-    depth_distribution("%spolygon%s.txt" % (area, n))
+    #depth_distribution("%spolygon%s.txt" % (area, n))
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 # need to put in area name as second argument for Kostrovsum
 # and how many polys
 area = "northview"
-total_polys = 10
+total_polys = 12
 n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
