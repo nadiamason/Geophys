@@ -299,9 +299,9 @@ def sqr_error(p, xi, yi):
 # plots the frequ of depths, in 10 km intervals 
 # arguments - takes name of beachballfile
 # returns nothing, shows the graph 
-def depth_distribution(beachballname):
+def depth_distribution(mwbeachballname):
     # opening focal mechanism data with mw on the end
-    infile = open(beachballname)
+    infile = open(mwbeachballname)
 
     total_number = 0
     depths = []
@@ -315,10 +315,14 @@ def depth_distribution(beachballname):
 
         except:
             continue
-    
+
+    if len(depths) == 0:
+        return 0, 0
+
     depth_tracker = 0
     higher_depth_tracker = 10
     depth_frequ = []
+    
     while depth_tracker <= max(depths):
         count = sum(dep >= depth_tracker and dep < higher_depth_tracker for dep in depths)
         depth_frequ.append(count)
@@ -332,20 +336,23 @@ def depth_distribution(beachballname):
         list_depths.append(depth)
         depth += 10
 
-    return list_depths, depth_frequ
+    return np.array(list_depths), np.array(depth_frequ)
 
-
-
-def plotting_depths():
+def plotting_depths(area, n):
     #ssinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/ssbeachballsnz.txt")
     #thrustinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/thrustbeachballsnz.txt")
     #normalinfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/normalbeachballsnz.txt")
+    allx, ally = depth_distribution("%spolygon%s.txt" % (area, n))
+    ssx, ssy = depth_distribution("ss%spolygon%s.txt" % (area, n))
+    thrustx, thrusty = depth_distribution("thrust%spolygon%s.txt" % (area, n))
+    normalx, normaly = depth_distribution("normal%spolygon%s.txt" % (area, n))
 
     fig, axs = plt.subplots(2, 2, sharex=True, sharey=True)
-    axs[0, 0].plot(np.array(list_depths), np.array(depth_frequ))
-    axs[0, 1].plot(x, 0.3 * y, 'o')
-    axs[1, 0].plot(x, y, '+')
-    axs[1, 1].plot(x, y)
+    ax1 = fig.add_subplot(00)
+    ax1.plot(allx, ally)
+    axs[0, 1].plot(ssx, ssy)
+    axs[1, 0].plot(thrustx, thrusty)
+    axs[1, 1].plot(normalx, normaly)
     plt.show()
 
 
@@ -431,7 +438,7 @@ def graphs(n, area):
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
     
-    x, y = depth_distribution("%spolygon%s.txt" % (area, n))
+    plotting_depths(area, n)
 
 
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
