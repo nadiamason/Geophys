@@ -88,6 +88,7 @@ def shallow_is_inside(coords, file_name, area, n):
 
         # if it is inside the polygon, write it in a new file
         if contains == True:
+            #print(line)
             newfile.write(line)
 
     # returns centre_point because need it for Kostrov summation      
@@ -210,7 +211,7 @@ def seismic_consistency(m0Kostrovfile, m0polygonfile):
     for line in infile:
         words = line.split()
         s_moment_average = float(words[-1])
-
+    #print(s_moment_average)
 
     # finding sum of scalar moments in area
     secondfile = open(m0polygonfile, "r")
@@ -221,16 +222,18 @@ def seismic_consistency(m0Kostrovfile, m0polygonfile):
         scalar_moment_list.append(float(bits[-1]))
     #print(len(scalar_moment_list))
 
-    max_value = max(scalar_moment_list)
-    scalar_moment_array = np.array(scalar_moment_list)
-    normalised_sc_mom = scalar_moment_array / max_value
-    normalised_sum_scalar_moments = sum(normalised_sc_mom)
-    s_moment_average = s_moment_average / max_value
+    #max_value = max(scalar_moment_list)
+    #scalar_moment_array = np.array(scalar_moment_list)
+    #normalised_sc_mom = scalar_moment_array / max_value
+    #normalised_sum_scalar_moments = sum(normalised_sc_mom)
 
-    #sum_scalar_moments = sum(scalar_moment_list)
+    #s_moment_average = s_moment_average / max_value
 
-    seis_consistency = s_moment_average/normalised_sum_scalar_moments
-    print(seis_consistency)
+    sum_scalar_moments = sum(scalar_moment_list)
+    print(sum_scalar_moments)
+
+    seis_consistency = s_moment_average/sum_scalar_moments
+    #print(seis_consistency)
     return seis_consistency
 
 # plots frequ-mag graph
