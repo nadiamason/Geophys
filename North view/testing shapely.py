@@ -49,7 +49,7 @@ def coordinates(n, areaname):
 # ONLY WANT SHALLOW (<70KM) EARTHQUAKES - USE THIS ONE
 # arguments - the polygon coordinates as a list, new name to write the beachballs to
 # returns the centre of the polygon, needed for Kostrov summation 
-def shallow_is_inside(coords, file_name):
+def shallow_is_inside(coords, file_name, area, n):
     # opening focal mechanism data - want to open the converted version of beachballs
     infile = open("C:/Users/nadia/Documents/University/geophys project/convertedlong.txt")
 
@@ -68,12 +68,17 @@ def shallow_is_inside(coords, file_name):
         
         # finding depth - if deeper than 70km we don't want it
         depth = float(words[2])
-        if depth > 70:
+        if depth > 50:
             continue
 
         # taking longitude and latitude
         long = float(words[0])
         lat = float(words[1])
+
+        """ removing anomalous earthquakes - to be investigated later"""
+        if area == "northview" and n ==  4:
+            if long == 182.45 and long == -33.39:
+                continue
 
         # using Shapely to make it a Point
         point = Point(long, lat)
@@ -206,6 +211,7 @@ def seismic_consistency(m0Kostrovfile, m0polygonfile):
         words = line.split()
         s_moment_average = float(words[-1])
 
+
     # finding sum of scalar moments in area
     secondfile = open(m0polygonfile, "r")
     scalar_moment_list = []
@@ -213,9 +219,17 @@ def seismic_consistency(m0Kostrovfile, m0polygonfile):
     for line in secondfile:
         bits = line.split()
         scalar_moment_list.append(float(bits[-1]))
-    sum_scalar_moments = sum(scalar_moment_list)
+    #print(len(scalar_moment_list))
 
-    seis_consistency = s_moment_average/sum_scalar_moments
+    max_value = max(scalar_moment_list)
+    scalar_moment_array = np.array(scalar_moment_list)
+    normalised_sc_mom = scalar_moment_array / max_value
+    normalised_sum_scalar_moments = sum(normalised_sc_mom)
+    s_moment_average = s_moment_average / max_value
+
+    #sum_scalar_moments = sum(scalar_moment_list)
+
+    seis_consistency = s_moment_average/normalised_sum_scalar_moments
     print(seis_consistency)
     return seis_consistency
 
@@ -441,7 +455,7 @@ def uncondensingrepeats(area, total, linenumbers):
 def Kostrovsum(n, area):
     # POLYGON n
     polygonn = coordinates(n, "%s" % (area))
-    changing_polygon = shallow_is_inside(polygonn, "%spolygon%s.txt" % (area, n))
+    changing_polygon = shallow_is_inside(polygonn, "%spolygon%s.txt" % (area, n), area, n)
     Kostrov_summation("%spolygon%s.txt" % (area, n), "%sKostrov%s.txt" % (area, n), changing_polygon)
 
 # part 2, need m0 and mw data for these files
@@ -453,7 +467,7 @@ def graphs(n, area):
     but for poly files"""
     seismic_consis = seismic_consistency("m0%sKostrov%s.txt" % (area, n), "m0%spolygon%s.txt" % (area, n))
 
-    #a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
+    a, b, x, y, p1d = frequ_mag_graph("mw%spolygon%s.txt" % (area, n), seismic_consis)
 
     # currently not returned or stored just code in case
     #error = sqr_error(p1d, x, np.log10(y))
@@ -465,7 +479,7 @@ def graphs(n, area):
 # need to put in area name as second argument for Kostrovsum
 # and how many polys
 area = "northview"
-total_polys = 12
+total_polys = 4
 n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
