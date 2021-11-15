@@ -51,6 +51,7 @@ def coordinates(n, areaname):
 # returns the centre of the polygon, needed for Kostrov summation 
 def shallow_is_inside(coords, file_name, area, n):
     # opening focal mechanism data - want to open the converted version of beachballs
+    # this is all the beachballs, asking the question is each ball in the polygon
     infile = open("C:/Users/nadia/Documents/University/geophys project/convertedlong.txt")
 
     newfile = open("%s" % file_name, "w")
@@ -68,7 +69,7 @@ def shallow_is_inside(coords, file_name, area, n):
         
         # finding depth - if deeper than 70km we don't want it
         depth = float(words[2])
-        if depth > 50:
+        if depth > 70:
             continue
 
         # taking longitude and latitude
@@ -220,19 +221,19 @@ def seismic_consistency(m0Kostrovfile, m0polygonfile):
     for line in secondfile:
         bits = line.split()
         scalar_moment_list.append(float(bits[-1]))
-    #print(len(scalar_moment_list))
+    print(len(scalar_moment_list))
 
-    #max_value = max(scalar_moment_list)
-    #scalar_moment_array = np.array(scalar_moment_list)
-    #normalised_sc_mom = scalar_moment_array / max_value
-    #normalised_sum_scalar_moments = sum(normalised_sc_mom)
+    max_value = max(scalar_moment_list)
+    scalar_moment_array = np.array(scalar_moment_list)
+    normalised_sc_mom = scalar_moment_array / max_value
+    normalised_sum_scalar_moments = sum(normalised_sc_mom)
 
-    #s_moment_average = s_moment_average / max_value
+    s_moment_average = s_moment_average / max_value
 
-    sum_scalar_moments = sum(scalar_moment_list)
-    print(sum_scalar_moments)
+    #sum_scalar_moments = sum(scalar_moment_list)
+    #print(sum_scalar_moments)
 
-    seis_consistency = s_moment_average/sum_scalar_moments
+    seis_consistency = s_moment_average/normalised_sum_scalar_moments
     #print(seis_consistency)
     return seis_consistency
 
@@ -398,6 +399,7 @@ def plotting_depths(area, n, seismicconsis):
 # also does the same for polygons
 # returns the number of lines for each polygon file needed to uncondense    
 def condensingrepeats(area, total):
+    # creating the big files to write into
     newfileKostrov = open("%sKostrovs.txt" % area, "w")
     newfilepolygons = open("%spolygons.txt" % area, "w")
     counter = 1
@@ -414,6 +416,8 @@ def condensingrepeats(area, total):
             newfilepolygons.write(line)
             linecounter += 1
         linenumbers.append(linecounter)
+        print("Line numbers in the loop")
+        print(linenumbers)
         counter += 1
     return linenumbers
 
@@ -421,6 +425,8 @@ def condensingrepeats(area, total):
 # also does the same for polygons, mwpolygon1 etc.
 # returns nothing
 def uncondensingrepeats(area, total, linenumbers):
+    print("line numbers in uncondensing")
+    print(linenumbers)
     Kosinfile = open("m0%sKostrovs.txt" % area)
     Kostrovdata = []
     polygonmwinfile = open("mw%spolygons.txt" % area)
@@ -438,14 +444,17 @@ def uncondensingrepeats(area, total, linenumbers):
     for line in polygonm0infile:
         polygonm0data.append(line)
 
+    line_counter = 1
+    stoplinenumber = 0
+
     while counter <= total:
         newfileKostrov = open("m0%sKostrov%i.txt" % (area, counter), "w")
         newfilemwpolygon = open("mw%spolygon%i.txt" % (area, counter), "w")
         newfilem0polygon = open("m0%spolygon%i.txt" % (area, counter), "w")
-        line_counter = 1
-
-
-        while line_counter <= linenumbers[counter - 1]:
+        
+        
+        stoplinenumber +=  linenumbers[counter - 1] 
+        while line_counter <= stoplinenumber:
             newfilemwpolygon.write(polygonmwdata[line_counter - 1])
             newfilem0polygon.write(polygonm0data[line_counter - 1])
             line_counter += 1
@@ -487,10 +496,19 @@ n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
     n += 1
+    print("CHANGING POLYGON")
+    print("HELLO")
+    print("HELLO")
 linenumbers = condensingrepeats(area, total_polys)
+print("line numbers from condensing function")
+print(linenumbers)
+
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 uncondensingrepeats(area, total_polys, linenumbers)
+
+"""Before this you need to do different types python file"""
+# PART 3
 n = 1
 while n <= total_polys:
     graphs("%s" % n, area)
