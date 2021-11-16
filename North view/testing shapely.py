@@ -496,13 +496,8 @@ n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
     n += 1
-    print("CHANGING POLYGON")
-    print("HELLO")
-    print("HELLO")
-linenumbers = condensingrepeats(area, total_polys)
-print("line numbers from condensing function")
-print(linenumbers)
 
+linenumbers = condensingrepeats(area, total_polys)
 
 # PART 2 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 uncondensingrepeats(area, total_polys, linenumbers)
