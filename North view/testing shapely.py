@@ -77,7 +77,7 @@ def shallow_is_inside(coords, file_name, area, n):
         lat = float(words[1])
 
         """ removing anomalous earthquakes - to be investigated later"""
-        if area == "northview" and n ==  4:
+        if area == "northview" and n ==  6:
             if long == 182.45 and long == -33.39:
                 continue
 
@@ -491,7 +491,7 @@ def graphs(n, area):
 # need to put in area name as second argument for Kostrovsum
 # and how many polys
 area = "northview"
-total_polys = 4
+total_polys = 7
 n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
