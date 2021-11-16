@@ -85,7 +85,7 @@ def making_dif_type_polys(n, areaname, type):
 
 
 area = "northview"
-total_polys = 4
+total_polys = 7
 n = 1
 while n <= total_polys:
     making_dif_type_polys(n, area, "ss")
