@@ -28,5 +28,5 @@ def kmltotxt(kmlfile, newtxtfile):
         newfile.write(str(polygon))
         newfile.write("\n")
 
-kmltotxt("northernisland-polygons.kml", "northernisland-polygons.txt")
+kmltotxt("northview-polygons.kml", "northview-polygons.txt")
         

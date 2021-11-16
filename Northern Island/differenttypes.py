@@ -43,7 +43,7 @@ def shallow_is_inside(coords, file_name, type):
     # opening focal mechanism data - want to open the converted version of beachballs
     infile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/%smwm0convertedlong.txt" % type)
 
-    newfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/Northern Island/%s" % file_name, "w")
+    newfile = open("C:/Users/nadia/GeophysProj/Geophysics-Project/North view/%s" % file_name, "w")
 
     # using Shapely to make Polygon
     poly = Polygon(coords)
@@ -84,8 +84,8 @@ def making_dif_type_polys(n, areaname, type):
     shallow_is_inside(coords, "%s%spolygon%i.txt" % (type, areaname, n), type )
 
 
-area = "northernisland"
-total_polys = 5
+area = "northview"
+total_polys = 4
 n = 1
 while n <= total_polys:
     making_dif_type_polys(n, area, "ss")
