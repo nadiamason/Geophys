@@ -68,6 +68,8 @@ def total_m0s(m0polygonfile):
         m0 = float(bits[-1])
         m0 = m0 / 10**7
         scalar_moment_list.append(m0)
+    
+    return sum(scalar_moment_list)
 
 def readingpoints(number):
     infile = open("points.kml")
@@ -177,7 +179,7 @@ for i in range(1,total_polys + 1):
     dataline.append(strainratetwo)
 
     # VELOCITIES
-    m0 = total_m0s("m0%spolygon%i" % (areaname, i))
+    m0 = total_m0s("m0%spolygon%i.txt" % (areaname, i))
     first_term = 1 / (mu * distance * w * tau)
     velocity = first_term * m0
     dataline.append(velocity)
