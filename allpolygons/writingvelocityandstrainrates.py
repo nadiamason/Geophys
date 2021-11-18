@@ -100,15 +100,6 @@ def readingpoints(number):
         counter += 1
             
     return longitudes, latitudes
-                
-
-
-
-
-
-
-            
-
 
 areaname = "allpolygons"
 total_polys = int(input("how many polygons?  "))
@@ -119,6 +110,7 @@ headers = "polygon number, surface area, depth, volume, mu, length, dip in degre
 newfile.write(headers)
 newfile.write("\n")
 
+depths = [60, 60, 30, 30, 50, 60, 30, 60, 30, 30, 60, 60, 60, 60, 40, 50, 50, 20, 10, 20, 60, 30, 40, 30, 30, 40, 30]
 Geod = Geod(ellps = 'WGS84')
 for i in range(1,total_polys + 1):
 
@@ -132,7 +124,8 @@ for i in range(1,total_polys + 1):
     dataline.append(area)
 
     # depth
-    depth = float(input("What is the seismogenic depth for polygon number %i? " % i))
+    #depth = float(input("What is the seismogenic depth for polygon number %i? " % i))
+    depth = depths[i - 1]
     dataline.append(depth)
 
     # volume
@@ -165,7 +158,8 @@ for i in range(1,total_polys + 1):
 
 
     # catalogue length, tau
-    tau = float(input("what is catalogue length? "))
+    #tau = float(input("what is catalogue length? "))
+    tau = 1446508800
     dataline.append(tau)
     
     largesteigen = float(input("What is the largest eigen value? "))
