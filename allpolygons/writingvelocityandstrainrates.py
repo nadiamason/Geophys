@@ -69,10 +69,49 @@ def total_m0s(m0polygonfile):
         m0 = m0 / 10**7
         scalar_moment_list.append(m0)
 
+def readingpoints(number):
+    infile = open("points.kml")
+    #for line in infile:
+     #   if line[:9] == "\t\t\t<name>":
+      #      if line[9] == number:
+    data = []
+ 
+    [data.append(line) for line in infile]
+
+    counter = 0
+    length = len(data)
+    longitudes = []
+    latitudes = []
+    while counter < length:
+        line = data[counter]
+        if line[:9] == "\t\t\t<name>":
+            point_number = line[line.find('>')+1:line.rfind('<')]
+            if point_number == str(number):
+                longitude = data[counter + 2]
+                latitude = data[counter + 3]
+
+                long = longitude[longitude.find('>')+1:longitude.rfind('<')]
+                lat = longitude[longitude.find('>')+1:longitude.rfind('<')]
+
+                longitudes.append(long)
+                latitudes.append(lat)
+        counter += 1
+            
+    return longitudes, latitudes
+                
+
+
+
+
+
+
+            
+
 
 areaname = "allpolygons"
 total_polys = int(input("how many polygons?  "))
 newfile = open("velocityandstrain.csv", "w")
+
 
 headers = "polygon number, surface area, depth, volume, mu, length, dip in degrees, dip in rads, w, catalogue length, big eigen, small eigen, strainrateone, strainratetwo, velocity"
 newfile.write(headers)
@@ -103,10 +142,11 @@ for i in range(1,total_polys + 1):
     dataline.append(mu)
 
     # length
-    lat1 = convert(input("What is the latitude of point 1? "))
-    long1 = convert(input("What is the longitude of point 1? "))
-    lat2 = convert(input("What is the latitude of point 2? "))
-    long2 = convert(input("What is the longitude of point 2? "))
+    longitudes, latitudes = readingpoints(i)
+    long1 = longitudes[0]
+    long2 = longitudes[1]
+    lat1 = latitudes[0]
+    lat2 = latitudes[1]
     
     azimuth1, azimuth2, distance = Geod.inv(long1, lat1, long2, lat2)
     dataline.append(distance)
