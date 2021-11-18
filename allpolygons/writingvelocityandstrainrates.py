@@ -91,12 +91,13 @@ def readingpoints(number):
             if point_number == str(number):
                 longitude = data[counter + 2]
                 latitude = data[counter + 3]
+                coordinates = data[counter + 13]
 
-                long = longitude[longitude.find('>')+1:longitude.rfind('<')]
-                lat = longitude[longitude.find('>')+1:longitude.rfind('<')]
+                coords = coordinates[coordinates.find('>')+1:coordinates.rfind('<')]
+                coords = coords.split(",")
 
-                longitudes.append(long)
-                latitudes.append(lat)
+                longitudes.append(coords[0])
+                latitudes.append(coords[1])
         counter += 1
             
     return longitudes, latitudes
@@ -112,12 +113,15 @@ newfile.write("\n")
 
 depths = [60, 60, 30, 30, 50, 60, 30, 60, 30, 30, 60, 60, 60, 60, 40, 50, 50, 20, 10, 20, 60, 30, 40, 30, 30, 40, 30]
 Geod = Geod(ellps = 'WGS84')
-for i in range(1,total_polys + 1):
+for i in range(21,total_polys + 1):
 
     # polygon number
     dataline = []
     dataline.append(i)
-
+    if i == 15:
+        newfile.write("\n")
+        continue
+        
     # Surface area
     poly = makingpolygon(i, areaname = "allpolygons")
     area = (Geod.geometry_area_perimeter(poly)[0])
@@ -139,10 +143,10 @@ for i in range(1,total_polys + 1):
     # length
     longitudes, latitudes = readingpoints(i)
     if len(longitudes) == 2:
-        long1 = longitudes[0]
-        long2 = longitudes[1]
-        lat1 = latitudes[0]
-        lat2 = latitudes[1]
+        long1 = float(longitudes[0])
+        long2 = float(longitudes[1])
+        lat1 = float(latitudes[0])
+        lat2 = float(latitudes[1])
 
         azimuth1, azimuth2, distance = Geod.inv(long1, lat1, long2, lat2)
     
