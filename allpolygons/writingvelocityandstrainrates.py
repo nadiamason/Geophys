@@ -138,12 +138,27 @@ for i in range(1,total_polys + 1):
 
     # length
     longitudes, latitudes = readingpoints(i)
-    long1 = longitudes[0]
-    long2 = longitudes[1]
-    lat1 = latitudes[0]
-    lat2 = latitudes[1]
+    if len(longitudes) == 2:
+        long1 = longitudes[0]
+        long2 = longitudes[1]
+        lat1 = latitudes[0]
+        lat2 = latitudes[1]
+
+        azimuth1, azimuth2, distance = Geod.inv(long1, lat1, long2, lat2)
     
-    azimuth1, azimuth2, distance = Geod.inv(long1, lat1, long2, lat2)
+    if len(longitudes) == 3:
+        long1 = longitudes[0]
+        long2 = longitudes[1]
+        lat1 = latitudes[0]
+        lat2 = latitudes[1]
+
+        azimuth1, azimuth2, distance1 = Geod.inv(long1, lat1, long2, lat2)
+        lat3 = latitudes[2]
+        long3 = longitudes[2]
+        azimuth1, azimuth2, distance2 = Geod.inv(long2, lat2, long3, lat3)
+
+        distance = distance1 + distance2
+
     dataline.append(distance)
 
     # dip from mttk
