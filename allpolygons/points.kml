@@ -783,7 +783,6 @@
 		</Placemark>
 		<Placemark>
 			<name>22</name>
-			<open>1</open>
 			<Camera>
 				<longitude>167.5841755166649</longitude>
 				<latitude>-46.86350302270752</latitude>
@@ -801,7 +800,6 @@
 		</Placemark>
 		<Placemark>
 			<name>23</name>
-			<open>1</open>
 			<Camera>
 				<longitude>167.5841755166649</longitude>
 				<latitude>-46.86350302270752</latitude>
@@ -819,7 +817,6 @@
 		</Placemark>
 		<Placemark>
 			<name>23</name>
-			<open>1</open>
 			<Camera>
 				<longitude>167.5841646191561</longitude>
 				<latitude>-46.86350411474197</latitude>
@@ -837,7 +834,6 @@
 		</Placemark>
 		<Placemark>
 			<name>24</name>
-			<open>1</open>
 			<Camera>
 				<longitude>161.5165279949001</longitude>
 				<latitude>-52.46262921382576</latitude>
@@ -855,7 +851,6 @@
 		</Placemark>
 		<Placemark>
 			<name>24</name>
-			<open>1</open>
 			<Camera>
 				<longitude>161.5165279949001</longitude>
 				<latitude>-52.46262921382576</latitude>
