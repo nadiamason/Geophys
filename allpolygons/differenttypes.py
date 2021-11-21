@@ -84,7 +84,7 @@ def making_dif_type_polys(n, areaname, type):
     shallow_is_inside(coords, "%s%spolygon%i.txt" % (type, areaname, n), type, areaname )
 
 
-area = input("What is areaname  ")
+area = "allpolygons"
 total_polys = float(input("how many polygons?  "))
 n = 1
 while n <= total_polys:
