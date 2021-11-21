@@ -113,7 +113,7 @@ newfile.write("\n")
 
 depths = [60, 60, 30, 30, 50, 60, 30, 60, 30, 30, 60, 60, 60, 60, 40, 50, 50, 20, 10, 20, 60, 30, 40, 30, 30, 40, 30]
 Geod = Geod(ellps = 'WGS84')
-for i in range(21,total_polys + 1):
+for i in range(1,total_polys + 1):
 
     # polygon number
     dataline = []
