@@ -508,7 +508,7 @@ uncondensingrepeats(area, total_polys, linenumbers)
 
 """Before this you need to do different types python file"""
 # PART 3
-n = 19
+n = 1
 while n <= total_polys:
     graphs("%s" % n, area)
     n += 1
