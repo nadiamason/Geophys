@@ -111,7 +111,10 @@ headers = "polygon number, surface area, depth, volume, mu, length, dip in degre
 newfile.write(headers)
 newfile.write("\n")
 
+# these depths are in km
 depths = [60, 60, 30, 30, 50, 60, 30, 60, 30, 30, 60, 60, 60, 60, 40, 50, 50, 20, 10, 20, 60, 30, 40, 30, 30, 40, 30]
+dips = [87.2966, ]
+
 Geod = Geod(ellps = 'WGS84')
 for i in range(1,total_polys + 1):
 
@@ -122,18 +125,19 @@ for i in range(1,total_polys + 1):
         newfile.write("\n")
         continue
         
-    # Surface area
+    # Surface area - metres
     poly = makingpolygon(i, areaname = "allpolygons")
     area = (Geod.geometry_area_perimeter(poly)[0])
     dataline.append(area)
 
     # depth
     #depth = float(input("What is the seismogenic depth for polygon number %i? " % i))
-    depth = depths[i - 1]
+    depth = depths[i - 1] * 10**3 # convert to m
     dataline.append(depth)
 
-    # volume
+    # volume - area in m2 and depth in m
     volume = area * depth
+    # volume in m3 now
     dataline.append(volume)
 
     # mu - rigidity
@@ -148,6 +152,7 @@ for i in range(1,total_polys + 1):
         lat1 = float(latitudes[0])
         lat2 = float(latitudes[1])
 
+        # gives distance in metres
         azimuth1, azimuth2, distance = Geod.inv(long1, lat1, long2, lat2)
     
     if len(longitudes) == 3:
@@ -178,6 +183,7 @@ for i in range(1,total_polys + 1):
 
     # catalogue length, tau
     #tau = float(input("what is catalogue length? "))
+    # in seconds
     tau = 1446508800
     dataline.append(tau)
     
