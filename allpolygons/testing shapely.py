@@ -490,8 +490,8 @@ def graphs(n, area):
 # PART 1 - NEED TO DO FOR NEW/CHANGED POLYGONS BEFORE PART 2
 # need to put in area name as second argument for Kostrovsum
 # and how many polys
-area = "northernisland"
-total_polys = 5
+area = "allpolygons"
+total_polys = float(input("How many total polyons?  "))
 n = 1
 while n <= total_polys:
     Kostrovsum("%s" % n, area)
