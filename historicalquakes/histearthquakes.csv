@@ -1,0 +1,32 @@
+﻿Number,Locality,Year,Date,Latitude (S),Longitude (E) ,Depth,Ml,Mw,Scale Used
+1,Marlborough,1848,15-Oct,41.5,173.8,S,7.1,None,MM
+2,Wairarapa,1855,23-Jan,41.4,175,S,8.2,None,MM
+3,Cape Farewell,1868,18-Oct,40.3,172.9,S,7.25,None,MM
+5a,North Canterbury,1888,31-Aug,42.60,172.4,S,7.15,None,MM
+7,Nelson,1893,11-Feb,40.7,173.9,LC,6.75,None,MM
+11,Bay of Plenty,1914,22-Nov,37.5,176.5,300,7.2,None,MM
+12,Hawke's Bay,1921,28-Jun,39.3,176.4,80,7,None,RF-MM
+19,Bay of Plenty,1931,21-Sep,37.5,179,80,6.75,None,RF-MM
+22,Taranaki,1932,20-Jul,40,174,60,6.3,None,RF-MM
+30,Pusegur Bank,1945,01-Sep,47.47,166.12,12,6.5,None,RF-MM
+31,Lake Coleridge,1946,26-Jun,43.18,171.68,12,6.2,None,MM
+32,Waiau,1948,22-May,42.5,173,12,6.4,None,MM
+39,Aramoana,1951,10-Feb,40.21,177.04,33,6.1,None,MM
+40,Bay of Plenty,1951,28-Mar,37.08,176.91,370,6.4,None,MM
+41,Cape Runaway,1951,23-Apr,37.56,177.76,125,6.2,None,MM
+42,Hawke's Bay,1951,24-Jun,39.46,176.2,33,6.3,None,MM
+54,East Cape,1956,28-Dec,38.3,177.5,33,6.3,None,MM
+55,S. Kermedec Ridge,1957,09-Feb,34.25,180.49,314,6.7,None,MM
+57,Lake Taupo,1957,13-Mar,38.68,175.33,273,6,None,MM
+60a ,Ashley Clinton,1958,31-Jan,39.95,176.53,33,6.1,None,MM
+61,Bay of Plenty,1958,10-Dec,37.13,176.95,284,6.3,None,MM
+63,East Cape,1960,03-Feb,37.56,177.98,33,6,None,MM
+65,Fiordland,1960,24-May,44.19,167.73,12,6.5,None,MM
+70,Hikurangi Trench,1961,27-Dec,41.51,176.11,12,6.3,None,MM
+80,Chatham Rise,1965,11-Apr,42.8,174.31,12,6.1,6.1,MM
+83,Bay of Plenty,1965,08-Dec,37.11,177.66,234,6.5,None,MM
+84,Gisborne,1966,04-Mar,38.6,178,25,6,None,MM
+90,Inangahua,1968,23-May,41.76,171.96,15,7.1,7.1,MM
+91,Solander,1968,25-Sep,46.67,166.5,12,5.9,6.3,MM
+99,North Island,1973,05-Jan,39.13,175.18,173,7,None,MM
+102,Opunake,1974,05-Nov,39.54,173.46,12,6,None,MM
