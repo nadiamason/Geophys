@@ -1,0 +1,130 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+1917-05-01T18:26:20.000Z,-31.08,-176.461,15,8.2,mw,,,,,iscgem,iscgem913483,2015-05-13T18:52:41.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1917-08-05T15:50:25.000Z,-41.481,176.437,15,6.6,mw,,,,,iscgem,iscgem913599,2020-07-10T13:19:25.959Z,"67 km SSE of Castlepoint, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1918-11-03T11:13:58.000Z,-49.597,163.536,15,6.7,mw,,,,,iscgemsup,iscgemsup913333,2015-07-13T17:02:22.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1919-04-17T11:22:09.000Z,-30.418,-178.11,35,7.2,mw,,,,,iscgem,iscgem912761,2015-05-13T18:52:41.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1921-06-28T13:58:43.000Z,-39.682,176.888,25,6.7,mw,,,,,iscgem,iscgem912264,2020-07-10T12:59:12.768Z,"5 km SE of Hastings, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1924-07-24T04:55:19.000Z,-49.522,158.911,15,7.1,mw,,,,,iscgem,iscgem911040,2015-05-13T18:52:42.000Z,"north of Macquarie Island",earthquake,,,,,automatic,iscgem,iscgem
+1924-08-10T06:11:55.000Z,-31.259,-177.007,15,6.5,mw,,,,,iscgem,iscgem911052,2015-05-13T18:52:42.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1926-10-03T19:38:05.000Z,-50.182,159.597,10,7.4,mw,,,,,iscgem,iscgem910139,2015-05-13T18:52:42.000Z,"north of Macquarie Island",earthquake,,,,,automatic,iscgem,iscgem
+1927-02-25T15:41:22.000Z,-38.214,177.991,35,6.2,mw,,,,,iscgem,iscgem909114,2020-07-10T12:06:56.713Z,"48 km N of Gisborne, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1927-07-18T11:19:50.000Z,-32.772,-179.539,15,6.3,mw,,,,,iscgem,iscgem909390,2015-05-13T18:52:42.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1929-03-09T10:50:30.000Z,-42.968,172.03,20,7,mw,,,,,iscgem,iscgem907935,2020-07-10T11:46:05.564Z,"38 km NNW of Oxford, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1929-06-16T22:47:30.000Z,-41.982,172.397,20,7.3,mw,,,,,iscgem,iscgem908150,2020-08-14T00:33:20.656Z,"70 km ESE of Westport, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1930-03-06T15:35:07.000Z,-33.292,-178.005,15,6.3,mw,,,,,iscgem,iscgem907259,2015-05-13T18:52:42.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1930-09-22T01:31:23.000Z,-35.751,-179.768,35,6.3,mw,,,,,iscgem,iscgem907599,2015-05-13T18:52:43.000Z,"east of the North Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1930-09-25T18:06:26.000Z,-35.323,-179.596,35,6.2,mw,,,,,iscgem,iscgem907614,2015-05-13T18:52:43.000Z,"east of the North Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1931-02-02T22:46:52.000Z,-39.659,176.42,35,7.4,mw,,,,,iscgem,iscgem906607,2020-07-10T11:25:57.134Z,"36 km W of Hastings, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1931-02-08T01:43:50.000Z,-39.67,177.147,15,6.4,mw,,,,,iscgem,iscgem906616,2020-07-10T11:26:13.649Z,"25 km E of Hastings, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1931-02-13T01:27:27.000Z,-39.482,176.216,45,7.3,mw,,,,,iscgem,iscgem906628,2020-07-10T11:26:54.270Z,"47 km E of Waiouru, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1932-04-03T20:39:02.000Z,-30.618,-178.345,35,6.5,mw,,,,,iscgem,iscgem906090,2015-05-13T18:52:43.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1932-08-13T20:56:20.000Z,-49.123,164.497,20,6.1,mw,,,,,iscgem,iscgem906329,2015-05-13T18:52:43.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1932-09-15T13:54:56.000Z,-39.191,178.081,15,6.9,mw,,,,,iscgem,iscgem906371,2020-07-10T11:21:31.189Z,"60 km S of Gisborne, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1934-03-05T11:46:22.000Z,-40.497,175.171,35,7.2,mw,,,,,iscgem,iscgem904826,2020-07-10T10:59:23.447Z,"10 km WSW of Foxton, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1934-03-15T10:46:43.000Z,-39.606,176.772,25,6.3,mw,,,,,iscgem,iscgem904841,2020-07-10T11:00:19.334Z,"7 km WNW of Hastings, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1935-03-29T12:24:23.000Z,-30.496,-177.626,25,6.4,mw,,,,,iscgem,iscgem904173,2015-05-13T18:52:43.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1936-02-22T15:32:03.000Z,-49.094,164.275,15,6.9,mw,,,,,iscgem,iscgem903485,2015-05-13T18:52:44.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1936-02-22T19:22:54.000Z,-49.143,164.209,15,6.4,mw,,,,,iscgem,iscgem903486,2015-05-13T18:52:44.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1936-10-04T23:53:36.000Z,-30.607,-177.723,35,6.5,mw,,,,,iscgem,iscgem903863,2015-05-13T18:52:44.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1936-12-26T22:52:35.000Z,-30.73,-178.085,35,6.7,mw,,,,,iscgem,iscgem904000,2015-05-13T18:52:44.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1937-09-01T08:38:47.000Z,-32.795,-179.218,45,6.5,mw,,,,,iscgem,iscgem903226,2015-05-13T18:52:44.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1938-02-13T08:03:57.000Z,-35.9,179.406,35,6.5,mw,,,,,iscgem,iscgem902374,2015-05-13T18:52:44.000Z,"off the east coast of the North Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1938-12-16T17:21:23.000Z,-45.737,167.214,15,7,mw,,,,,iscgem,iscgem902871,2020-07-10T10:25:11.675Z,"52 km SW of Te Anau, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1938-12-16T23:14:52.000Z,-44.948,166.285,15,6.6,mw,,,,,iscgem,iscgem902872,2015-05-13T18:52:44.000Z,"123 km WNW of Te Anau, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1942-05-27T06:31:47.000Z,-33.078,-177.599,15,6.4,mw,,,,,iscgem,iscgem900300,2015-05-13T18:52:44.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1942-06-24T11:16:30.000Z,-41.186,175.868,15,7,mw,,,,,iscgem,iscgem900349,2020-07-10T09:50:59.275Z,"30 km SE of Masterton, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1942-08-01T12:34:06.000Z,-40.718,175.35,35,6.8,mw,,,,,iscgem,iscgem900404,2020-07-10T09:52:12.699Z,"11 km SE of Levin, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1943-07-11T02:10:15.000Z,-32.685,-177.977,15,6.7,mw,,,,,iscgem,iscgem899924,2015-05-13T18:52:45.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1943-08-02T00:46:34.000Z,-45.203,166.966,15,6.7,mw,,,,,iscgem,iscgem899954,2020-07-10T09:46:18.636Z,"off the west coast of the South Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1943-09-14T07:18:12.000Z,-30.271,-177.81,35,6.9,mw,,,,,iscgem,iscgem900000,2015-05-13T18:52:45.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1945-09-01T22:44:11.000Z,-46.939,166.022,20,7.5,mw,,,,,iscgem,iscgem899073,2015-05-13T18:52:45.000Z,"166 km WSW of Riverton, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1946-06-26T12:34:36.000Z,-43.353,171.486,15,6.5,mw,,,,,iscgem,iscgem898440,2020-07-10T09:25:25.503Z,"33 km NNW of Methven, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1947-03-25T20:32:37.000Z,-38.951,177.562,165,7,mw,,,,,iscgem,iscgem897790,2020-07-10T09:17:26.437Z,"19 km ENE of Wairoa, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1948-01-20T09:44:11.000Z,-33.712,-178.008,20,6.4,mw,,,,,iscgem,iscgem897158,2015-05-13T18:52:45.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1948-05-22T19:21:28.000Z,-42.527,173.023,15,6.5,mw,,,,,iscgem,iscgem897342,2020-07-10T09:12:12.216Z,"73 km NNE of Amberley, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1949-02-13T18:24:20.000Z,-33.472,-177.719,15,6.7,mw,,,,,iscgem,iscgem896324,2015-05-13T18:52:45.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1950-02-05T01:23:38.000Z,-49.015,164.359,15,6.4,mw,,,,,iscgem,iscgem895193,2015-05-13T18:52:45.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1950-08-05T09:16:55.000Z,-49.337,164.406,15,6.5,mw,,,,,iscgem,iscgem895656,2015-05-13T18:52:45.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1950-10-19T09:51:18.000Z,-33.5,-177.713,15,6.1,mw,,,,,iscgem,iscgem895950,2015-05-13T18:52:46.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1950-10-26T03:49:54.000Z,-32.785,-177.879,15,6,mw,,,,,iscgem,iscgem895990,2015-05-13T18:52:46.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1950-10-26T15:38:43.000Z,-32.73,-177.369,15,6.3,mw,,,,,iscgem,iscgem895993,2015-05-13T18:52:46.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1951-02-10T03:27:58.000Z,-40.051,176.655,15,6.3,mw,,,,,iscgem,iscgem894090,2020-07-10T08:00:13.626Z,"48 km SSW of Hastings, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1951-04-23T06:50:14.000Z,-37.355,178.076,20,6.1,mw,,,,,iscgem,iscgem894286,2020-07-10T08:05:57.476Z,"100 km NE of Opotiki, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1951-10-06T03:28:39.000Z,-30.387,-176.371,15,6.1,mw,,,,,iscgem,iscgem894781,2015-05-13T18:52:46.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1952-10-13T23:24:10.000Z,-34.133,-178.084,15,6.1,mw,,,,,iscgem,iscgem893548,2015-05-13T18:52:47.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1953-10-24T23:19:44.000Z,-35.295,-179.733,30,6,mw,,,,,iscgem,iscgem892108,2015-05-13T18:52:48.000Z,"east of the North Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1954-01-12T14:16:30.000Z,-48.57,165.057,35,6.5,mw,,,,,iscgem,iscgem890241,2015-05-13T18:52:48.000Z,"off the west coast of the South Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1954-01-12T14:20:33.000Z,-48.691,164.903,35,6.8,mw,,,,,iscgem,iscgem890242,2015-05-13T18:52:48.000Z,"off the west coast of the South Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1954-01-13T00:13:14.000Z,-48.707,165.278,15,6.7,mw,,,,,iscgem,iscgem890246,2015-05-13T18:52:48.000Z,"off the west coast of the South Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1954-02-19T19:07:52.000Z,-30.248,-177.371,25,6.6,mw,,,,,iscgem,iscgem890358,2015-05-13T18:52:48.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1954-02-20T21:28:26.000Z,-30.348,-176.665,15,6.1,mw,,,,,iscgem,iscgem890365,2015-05-13T18:52:48.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1955-01-05T00:50:21.000Z,-50.075,162.851,15,7,mw,,,,,iscgem,iscgem889080,2015-05-13T18:52:49.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1955-08-14T16:43:27.000Z,-31.406,-179.284,15,6.2,mw,,,,,iscgem,iscgem889826,2015-05-13T18:52:49.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1955-09-20T13:20:26.000Z,-31.763,-178.011,30,6.3,mw,,,,,iscgem,iscgem889936,2015-05-13T18:52:49.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1956-01-30T08:43:06.000Z,-37.306,177.208,15,6.4,mw,,,,,iscgem,iscgem887887,2020-07-10T05:53:46.921Z,"75 km NNE of Whakatane, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1956-02-24T09:18:56.000Z,-35.347,-179.564,25,6.2,mw,,,,,iscgem,iscgem888005,2015-05-13T18:52:50.000Z,"east of the North Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1956-06-04T12:05:55.000Z,-32.381,-177.983,25,6,mw,,,,,iscgem,iscgem888324,2015-05-13T18:52:50.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1956-10-28T03:28:46.000Z,-33.127,-178.967,49.9,6.3,mw,,,,,iscgem,iscgem888840,2015-05-13T18:52:50.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1956-12-28T14:24:34.000Z,-38.343,177.657,35,6.5,mw,,,,,iscgem,iscgem600678247,2020-07-09T22:25:44.449Z,"45 km NW of Gisborne, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1957-06-11T14:49:47.000Z,-30.525,-178.096,62.5,6.5,mw,,,,,iscgem,iscgem886692,2015-05-13T18:52:51.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1957-07-22T06:17:00.000Z,-33.342,-178.83,15,6,mw,,,,,iscgem,iscgem886890,2015-05-13T18:52:51.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1957-11-13T17:22:47.000Z,-32.784,-179.165,30,6.5,mw,,,,,iscgem,iscgem887532,2015-05-13T18:52:52.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1957-12-31T14:28:20.000Z,-45.062,166.148,25,6.2,mw,,,,,iscgem,iscgem887754,2015-05-13T18:52:52.000Z,"129 km WNW of Te Anau, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1958-02-18T13:21:29.000Z,-30.478,-178.479,50,6,mw,,,,,iscgem,iscgem883864,2015-05-13T18:52:52.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1958-03-09T10:22:32.000Z,-33.492,-179.236,43.3,6.2,mw,,,,,iscgem,iscgem883978,2015-05-13T18:52:52.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1958-09-22T19:05:48.000Z,-33.483,-177.854,30,6.3,mw,,,,,iscgem,iscgem885169,2015-05-13T18:52:53.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1959-04-24T17:58:07.000Z,-31.336,-178.67,35,6.4,mw,,,,,iscgem,iscgem881859,2015-05-13T18:52:53.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1960-05-24T14:46:41.000Z,-44.187,167.818,15,6.2,mw,,,,,iscgem,iscgem879218,2015-05-13T18:52:54.000Z,"114 km NW of Arrowtown, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1960-06-15T23:31:25.000Z,-32.334,-177.698,15,6.2,mw,,,,,iscgem,iscgem879527,2015-05-13T18:52:54.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1960-06-25T14:41:55.000Z,-30.074,-177.724,35,6.4,mw,,,,,iscgem,iscgem879627,2015-05-13T18:52:54.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1960-06-27T16:50:25.000Z,-32.461,-177.733,15,6,mw,,,,,iscgemsup,iscgemsup879646,2015-07-13T17:02:23.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1960-11-06T06:14:52.000Z,-31.125,-177.526,25,6.3,mw,,,,,iscgem,iscgem880703,2015-05-13T18:52:55.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1960-12-13T07:36:20.000Z,-51.964,160.914,15,6.8,mw,,,,,iscgem,iscgem880984,2015-05-13T18:52:55.000Z,"north of Macquarie Island",earthquake,,,,,automatic,iscgem,iscgem
+1961-03-18T14:55:02.000Z,-49.867,163.396,15,6.7,mw,,,,,iscgem,iscgem17290159,2015-05-13T18:52:55.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1961-10-02T07:02:37.000Z,-33.906,179.638,20,6.1,mw,,,,,iscgemsup,iscgemsup877466,2015-07-13T17:02:23.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1961-12-27T23:48:03.000Z,-41.261,175.833,20,6.4,mw,,,,,iscgem,iscgem877878,2020-07-10T04:00:02.502Z,"31 km ENE of Waipawa, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1962-05-10T00:27:16.000Z,-41.796,171.747,25,6,mw,,,,,iscgem,iscgem874715,2020-07-10T03:35:51.617Z,"12 km ESE of Westport, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1962-12-29T14:47:39.000Z,-31.447,-177.5,15,6,mw,,,,,iscgem,iscgem875870,2015-05-13T18:52:56.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1963-03-31T19:22:53.000Z,-30.163,-177.84,51.6,6.2,mw,,,,,iscgem,iscgem872086,2015-05-13T18:52:57.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1963-05-20T11:38:05.000Z,-30.685,-178.17,65,6.8,mw,,,,,iscgem,iscgem872354,2015-05-13T18:52:57.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1963-07-29T20:14:09.000Z,-30.106,-177.264,35,6.3,mw,,,,,iscgem,iscgem872841,2015-05-13T18:52:57.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1963-07-29T20:16:37.000Z,-30.075,-176.933,25,6.6,mw,,,,,iscgem,iscgem17294060,2015-05-13T18:52:57.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1963-09-14T03:52:17.000Z,-31.415,-178.959,15,6.1,mw,,,,,iscgem,iscgem873061,2015-05-13T18:52:57.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1964-05-13T05:25:26.000Z,-32.744,-178.134,20,6.4,mw,,,,,iscgem,iscgem867701,2015-05-13T18:52:58.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1964-08-05T11:06:03.000Z,-32.241,-179.684,230.5,6.4,mw,,,,,iscgem,iscgem864933,2015-05-13T18:52:58.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1964-09-12T22:07:03.000Z,-48.969,164.285,20,7.6,mw,,,,,iscgem,iscgem864342,2015-05-13T18:52:58.000Z,"off the west coast of the South Island of New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1964-11-08T02:43:56.000Z,-49.04,164.26,15,6.1,mw,,,,,iscgem,iscgem862548,2015-05-13T18:52:58.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1965-04-09T10:45:26.000Z,-32.707,-178.207,20,6,mw,,,,,iscgem,iscgem857602,2015-05-13T18:52:59.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1965-12-08T18:05:27.000Z,-37.199,177.558,175,6,mw,,,,,iscgem,iscgem851601,2015-05-13T18:52:59.000Z,"93 km NNE of Opotiki, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1966-05-25T13:20:54.000Z,-52.772,160.124,10,6.1,mw,,,,,iscgem,iscgem847789,2015-05-13T18:53:00.000Z,"Macquarie Island region",earthquake,,,,,automatic,iscgem,iscgem
+1967-07-22T03:58:01.000Z,-33.451,-178.828,20,6.1,mw,,,,,iscgem,iscgem833554,2015-05-13T18:53:01.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1967-09-04T03:52:00.000Z,-31.278,-179.422,236.1,6.5,mw,,,,,iscgem,iscgem830914,2015-05-13T18:53:01.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1967-09-20T09:39:16.000Z,-49.736,164.009,20,7,mw,,,,,iscgem,iscgem831453,2015-05-13T18:53:01.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1968-01-20T21:21:33.000Z,-30.116,-179.547,356.6,6.1,mw,,,,,iscgem,iscgem827497,2015-05-13T18:53:01.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1968-05-20T07:13:09.000Z,-30.799,-178.11,55,7,mw,,,,,iscgem,iscgem822391,2015-05-13T18:53:01.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-05-20T20:05:51.000Z,-30.725,-178.087,50,6.9,mw,,,,,iscgem,iscgem822409,2015-05-13T18:53:01.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-05-23T17:24:18.000Z,-41.659,172.02,20,7.2,mw,,,,,iscgem,iscgem822588,2020-08-14T03:28:27.042Z,"36 km ENE of Westport, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-05-30T19:42:26.000Z,-30.928,-177.397,35,6.4,mw,,,,,iscgem,iscgem823302,2015-05-13T18:53:02.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-07-25T07:23:07.000Z,-30.725,-178.217,45,7.3,mw,,,,,iscgem,iscgem819340,2020-07-10T01:11:52.195Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-08-21T17:56:48.000Z,-30.775,-178.766,15,6.5,mw,,,,,iscgem,iscgem818206,2015-05-13T18:53:02.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-09-25T07:02:51.000Z,-46.451,166.562,15,6.2,mw,,,,,iscgem,iscgem817350,2015-05-13T18:53:02.000Z,"112 km W of Riverton, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1968-09-26T18:02:54.000Z,-30.62,-177.914,50,7.1,mw,,,,,iscgem,iscgem817404,2015-05-13T18:53:02.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1969-05-30T15:55:36.000Z,-32.083,-177.918,20,6.2,mw,,,,,iscgem,iscgem809404,2015-05-13T18:53:03.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1969-05-30T16:22:47.000Z,-32.16,-177.984,20,6.1,mw,,,,,iscgem,iscgem809406,2015-05-13T18:53:03.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1969-06-17T23:58:09.000Z,-52.744,160.309,15,6.8,mw,,,,,iscgem,iscgem808108,2015-05-13T18:53:03.000Z,"Macquarie Island region",earthquake,,,,,automatic,iscgem,iscgem
+1969-06-29T10:34:06.000Z,-30.516,-178.118,35,6.1,mw,,,,,iscgem,iscgem808444,2015-05-13T18:53:03.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1969-08-28T13:54:14.000Z,-31.456,-177.59,30,6,mw,,,,,iscgem,iscgem806471,2015-05-13T18:53:03.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1969-09-30T17:51:40.000Z,-31.66,-177.823,15,6.2,mw,,,,,iscgem,iscgem805035,2015-05-13T18:53:03.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1970-01-08T17:12:41.000Z,-34.85,178.782,199.4,6.8,mw,,,,,iscgem,iscgem799872,2015-05-13T18:53:03.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1970-07-27T12:31:21.000Z,-37.881,177.546,95,6.3,mw,,,,,iscgem,iscgem794062,2020-07-10T00:06:44.575Z,"26 km ENE of Opotiki, New Zealand",earthquake,,,,,automatic,iscgem,iscgem
+1970-10-10T21:59:43.000Z,-31.915,-177.896,25,6.3,mw,,,,,iscgem,iscgem790988,2015-05-13T18:53:04.000Z,"Kermadec Islands region",earthquake,,,,,automatic,iscgem,iscgem
+1970-10-11T03:16:50.000Z,-32.003,-178.011,25,6.5,mw,,,,,iscgem,iscgem790994,2015-05-13T18:53:04.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1970-10-11T05:38:07.000Z,-32.049,-177.898,25,6.2,mw,,,,,iscgem,iscgem791005,2015-05-13T18:53:04.000Z,"south of the Kermadec Islands",earthquake,,,,,automatic,iscgem,iscgem
+1972-04-01T23:51:21.000Z,-49.389,164.032,10,6.4,mw,,,,,iscgem,iscgem774029,2015-05-13T18:53:06.000Z,"Auckland Islands, New Zealand region",earthquake,,,,,automatic,iscgem,iscgem
+1973-01-05T13:54:29.100Z,-38.997,175.232,150,6.2,mb,,,,,us,usp000001h,2020-07-10T19:23:13.049Z,"49 km W of Turangi, New Zealand",earthquake,,,,,reviewed,us,us
+1973-02-14T16:11:14.900Z,-30.387,-177.509,29,6.3,ms,,,,,us,usp00000hh,2015-05-13T18:53:07.000Z,"Kermadec Islands, New Zealand",earthquake,,,,,reviewed,us,us
+1973-08-22T06:39:21.400Z,-32.791,-179.208,33,6,ms,,,,,us,usp000035f,2015-05-13T18:53:08.000Z,"south of the Kermadec Islands",earthquake,,,,,reviewed,us,us
+1974-02-28T13:59:17.800Z,-36.813,176.851,15,6.2,ms,,,,,us,usp00005er,2015-05-13T18:53:09.000Z,"92 km ENE of Tairua, New Zealand",earthquake,,,,,reviewed,us,us
+1975-01-12T17:47:23.500Z,-33.512,-178.088,23,6,ms,,,,,us,usp00009g6,2015-05-13T18:53:10.000Z,"south of the Kermadec Islands",earthquake,,,,,reviewed,us,us
+1975-07-16T18:17:44.000Z,-30.623,-177.487,46,6.2,ms,,,,,us,usp0000c0t,2014-11-06T23:21:31.239Z,"Kermadec Islands, New Zealand",earthquake,,,,,reviewed,us,us
+1975-07-16T19:38:23.400Z,-30.867,-177.434,37,6.1,ms,,,,,us,usp0000c0v,2014-11-06T23:21:31.240Z,"Kermadec Islands, New Zealand",earthquake,,,,,reviewed,us,us
