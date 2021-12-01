@@ -1,0 +1,41 @@
+##########   POLYGON1    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON2    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON3    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON4    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON5    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON6    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON7    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON8    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON9    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON10    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON11    ##########
+The sum of m0s = 6350269955483330560.000 
+##########   POLYGON12    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON13    ##########
+The sum of m0s = 6806981110869697495040.000 
+##########   POLYGON14    ##########
+The sum of m0s = 116272080863529631744.000 
+##########   POLYGON15    ##########
+The sum of m0s = 2653772176201836032.000 
+##########   POLYGON16    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON17    ##########
+The sum of m0s = 3548133892335731200.000 
+##########   POLYGON18    ##########
+The sum of m0s = 8614444408682883072.000 
+##########   POLYGON19    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON20    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON21    ##########
