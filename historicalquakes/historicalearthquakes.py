@@ -1,6 +1,8 @@
-infile = open("histearthquakes.csv", "r")
-newfile = open("gmthistearthquakes.txt", "w")
-newfile.write("Year, Date, Latitude, Longitude, Depth, Ml, Mw")
+import numpy as np
+
+infile = open("usgseditedeqs.csv", "r")
+newfile = open("usgsgmthistearthquakes.txt", "w")
+newfile.write("Year + date, update date, Latitude, Longitude, Depth, Ml, Mw, M0\n")
 
 counter = 0
 for line in infile:
@@ -11,9 +13,30 @@ for line in infile:
         continue
     
     # extracting data from file
-    year = line[2]
-    date = line[3]
-    latitude = str(float(line[4]) * -1)
+
+    latitude = line[4]
+
+    try:
+        latitude = float(latitude) 
+    except ValueError:
+        line.pop(4)
+        latitude = float(line[4]) 
+    
+    # getting year and date
+    try:
+        year = float(line[2])
+        date = line[3]
+
+    except ValueError:
+        year = line[2][:4]
+        try: 
+            year = float(year)
+            date = line[2][5:10]
+        except ValueError:
+            year = line[3][:4]
+            date = line[3][5:10]
+        
+
     longitude = str(float(line[5]))
     try:
         depth = float(line[6])
@@ -23,8 +46,10 @@ for line in infile:
             depth = 12
         elif depth == 'LC':
             depth = 33
-
-    ml = float(line[7])
+    try:
+        ml = float(line[7])
+    except:
+       ml = "None" 
 
     # if mw not given
     if line[8] == 'None':
@@ -37,9 +62,11 @@ for line in infile:
     
     # if mw already given
     else:
-        mw = line[8]
+        mw = float(line[8])
 
-    newline = [year, date, latitude, longitude, depth, ml, mw]
+    m0 = 10**((1.5 * mw) + 9.1)
+
+    newline = [year, date, latitude, longitude, depth, ml, round(mw, 2) , m0]
     newline = [str(x) for x in newline]
     for element in newline:
         newfile.write(element)
