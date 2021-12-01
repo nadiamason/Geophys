@@ -1,0 +1,41 @@
+##########   POLYGON1    ##########
+The sum of m0s = 11369623685389897728.000 
+##########   POLYGON2    ##########
+The sum of m0s = 480865732539983069184.000 
+##########   POLYGON3    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON4    ##########
+The sum of m0s = 5326413302374653952.000 
+##########   POLYGON5    ##########
+The sum of m0s = 23735116616957345792.000 
+##########   POLYGON6    ##########
+The sum of m0s = 26241940494913830912.000 
+##########   POLYGON7    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON8    ##########
+The sum of m0s = 7079457843841401856.000 
+##########   POLYGON9    ##########
+The sum of m0s = 9302038177821249536.000 
+##########   POLYGON10    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON11    ##########
+The sum of m0s = 9591344275350974464.000 
+##########   POLYGON12    ##########
+The sum of m0s = 28183829312644722688.000 
+##########   POLYGON13    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON14    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON15    ##########
+The sum of m0s = 46890174899191259136.000 
+##########   POLYGON16    ##########
+There are no hist. earthquakes in this polygon
+##########   POLYGON17    ##########
+The sum of m0s = 56447978933086920704.000 
+##########   POLYGON18    ##########
+The sum of m0s = 238895886719853854720.000 
+##########   POLYGON19    ##########
+The sum of m0s = 41157456439757561856.000 
+##########   POLYGON20    ##########
+The sum of m0s = 477955414005374910464.000 
+##########   POLYGON21    ##########
